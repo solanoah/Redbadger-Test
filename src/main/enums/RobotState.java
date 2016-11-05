@@ -5,5 +5,6 @@ package main.enums;
  */
 public enum RobotState {
     Alive,
-    Scent
+    Scent,
+    ExceedMaxCoordinate, InvalidInstruction
 }

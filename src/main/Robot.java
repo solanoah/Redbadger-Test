@@ -50,6 +50,17 @@ public class Robot {
      */
     @Override
     public String toString(){
+
+        if (this.robotState == RobotState.InvalidInstruction )
+        {
+            return "Invalid instruction sent to Robot";
+        }
+
+        if (this.robotState == RobotState.ExceedMaxCoordinate )
+        {
+            return "Max coordinate exceeded";
+        }
+
         return this.robotState == RobotState.Alive ? currentPosition.toString() : (currentPosition.toString() + " LOST");
     }
 }

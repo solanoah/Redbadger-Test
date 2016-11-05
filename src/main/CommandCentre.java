@@ -40,9 +40,16 @@ public class CommandCentre {
         // split the instruction into appropriate format
         char[] charArray = instruction.toCharArray();
 
+        // Validation
+        if (charArray.length > 100)
+        {
+            robot.setRobotState(RobotState.InvalidInstruction);
+            return;
+        }
+
         for (char commandChar : charArray) {
 
-            if (robot.getRobotState() == RobotState.Scent){
+            if (robot.getRobotState() != RobotState.Alive){
                 break;
             }
 
@@ -112,6 +119,13 @@ public class CommandCentre {
             case W:
                 nextCoordinate.x--;
                 break;
+        }
+
+        // Validation
+        if (nextCoordinate.x > 50 || nextCoordinate.y > 50)
+        {
+            robot.setRobotState(RobotState.ExceedMaxCoordinate);
+            return;
         }
 
         // Check if the next coordinate will lead to the robot being lost (scent) from the grid

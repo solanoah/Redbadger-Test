@@ -25,11 +25,13 @@ public class RobotTests {
         planetEarth.sendRobotToGrid("red", new Robot( new GridPosition(Direction.E,new Point(1,1))));
         planetEarth.sendRobotToGrid("blue", new Robot(new GridPosition(Direction.N, new Point(3,2))));
         planetEarth.sendRobotToGrid("green", new Robot(new GridPosition(Direction.W, new Point(0,3))));
+        planetEarth.sendRobotToGrid("badInstruction", new Robot(new GridPosition(Direction.W, new Point(51,3))));
 
         // Send instruction from earth to planet Mars
         planetEarth.sendInstructionToRobot("red", "RFRFRFRF");
         planetEarth.sendInstructionToRobot("blue", "FRRFLLFFRRFLL");
         planetEarth.sendInstructionToRobot("green", "LLFFFLFLFL");
+        planetEarth.sendInstructionToRobot("badInstruction", "LLFFFLFLFL");
 
         // Print the final position of robots on planet Mars
         planetMars.getRobots().values().forEach((v) -> System.out.println(v.toString()));
