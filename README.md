@@ -2,7 +2,7 @@
 
 Ensure that Java 8 is installed..
 </br>
-1) From the terminal (mac) navigate to the sr folder.
+1) From the terminal (mac) navigate to the src folder.
 </br>
 2) Run javac test/RobotTests.java 
 </br>
